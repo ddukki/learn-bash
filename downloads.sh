@@ -57,31 +57,31 @@ do
     filename=$(basename "$entry")
 
     founddir=false
-    if [[ $(is_ext "$ext" "${exeExt[@]}") -lt 1 ]];then
+    if [ $(is_ext "$ext" "${exeExt[@]}") ];then
       movedir="$dldir"/Programs
       founddir=true
-    elif [[ $(is_ext "$ext" "${imgExt[@]}") -lt 1 ]];then
+    elif [ $(is_ext "$ext" "${imgExt[@]}") ];then
       movedir="$dldir"/Images
       founddir=true
-    elif [[ $(is_ext "$ext" "${arcExt[@]}") -lt 1 ]];then
+    elif [ $(is_ext "$ext" "${arcExt[@]}") ];then
       movedir="$dldir"/Archives
       founddir=true
-    elif [[ $(is_ext "$ext" "${pdfExt[@]}") -lt 1 ]];then
+    elif [ $(is_ext "$ext" "${pdfExt[@]}") ];then
       movedir="$dldir"/PDFs
       founddir=true
-    elif [[ $(is_ext "$ext" "${fonExt[@]}") -lt 1 ]];then
+    elif [ $(is_ext "$ext" "${fonExt[@]}") ];then
       movedir="$dldir"/Fonts
       founddir=true
-    elif [[ $(is_ext "$ext" "${docExt[@]}") -lt 1 ]];then
+    elif [ $(is_ext "$ext" "${docExt[@]}") ];then
       movedir="$dldir"/Docs
       founddir=true
-    elif [[ $(is_ext "$ext" "${audExt[@]}") -lt 1 ]];then
+    elif [ $(is_ext "$ext" "${audExt[@]}") ];then
       movedir="$dldir"/Audio
       founddir=true
-    elif [[ $(is_ext "$ext" "${vidExt[@]}") -lt 1 ]];then
+    elif [ $(is_ext "$ext" "${vidExt[@]}") ];then
       movedir="$dldir"/Videos
       founddir=true
-    elif [[ $(is_ext "$ext" "${codExt[@]}") -lt 1 ]];then
+    elif [ $(is_ext "$ext" "${codExt[@]}") ];then
       movedir="$dldir"/Code
       founddir=true
     fi
@@ -91,7 +91,7 @@ do
       mv -i "$dldir/$filename" "$movedir/$filename"
     fi
 
-    if [[ $(is_ext "$ext" "${delExt[@]}") -lt 1 ]];then
+    if [ $(is_ext "$ext" "${delExt[@]}") ];then
       rm "$entry"
     fi
 
